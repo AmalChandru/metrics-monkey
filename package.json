@@ -1,0 +1,25 @@
+{
+  "name": "blitzkrieg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Amal Chandru",
+  "license": "ISC",
+  "dependencies": {
+    "@types/cli-progress": "^3.11.6",
+    "@types/node": "^22.0.2",
+    "axios": "^1.7.3",
+    "cli-progress": "^3.12.0",
+    "commander": "^12.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@types/yargs": "^17.0.32"
+  }
+}
