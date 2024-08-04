@@ -1,4 +1,4 @@
-import axios, { AxiosError } from 'axios';
+import axios from 'axios';
 import { performance } from 'perf_hooks';
 import { SingleBar, Presets } from 'cli-progress';
 import { BenchmarkOptions } from '../types';
@@ -15,7 +15,7 @@ export class Benchmark {
 
   constructor(options: BenchmarkOptions) {
     this.options = options;
-    this.progressBar = new SingleBar({}, Presets.shades_classic);
+    this.progressBar = new SingleBar({}, Presets.legacy);
     this.totalRequests = options.requests;
     this.startTime = performance.now();
   }
@@ -39,7 +39,6 @@ export class Benchmark {
     }
   
     const results = await Promise.all(promises);
-    const flattenedResults = results.flat();
   
     this.progressBar.stop();
     this.printStatistics();
