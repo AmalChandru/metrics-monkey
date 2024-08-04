@@ -2,9 +2,9 @@
 
 metrics-monkey is a no-nonsense, high-performance CLI HTTP benchmarking tool that's a Swiss Army knife for developers and performance engineers who want to:
 
-- 📈 Supercharge Web Performance: Benchmark your web services to spot performance bottlenecks and optimize your application for top-notch speed and reliability.
-- 🔄 Test API Endpoints: Simulate various traffic patterns, including high concurrency, large number of requests, and prolonged durations, to ensure your API endpoints can handle the load.
-- 🔍 Assess API Dependencies: Verify if the APIs you depend on can withstand the load and determine their maximum capacity.
+- 📈 **Supercharge Web Performance:** Benchmark your web services to spot performance bottlenecks and optimize your application for top-notch speed and reliability.
+- 🔄 **Test API Endpoints:** Simulate various traffic patterns, including high concurrency, large number of requests, and prolonged durations, to ensure your API endpoints can handle the load.
+- 🔍 **Assess API Dependencies:** Verify if the APIs you depend on can withstand the load and determine their maximum capacity.
 
 ## Installation
 
@@ -59,7 +59,7 @@ Total time: 6s
 
 ### 2: POST Request with Custom Headers
 ```bash
-metrics-monkey --url https://api.example.com/data --method POST --requests 500 --concurrency 20 --timeout 5 --headers '{"Authorization": "Bearer my-token"}' --body '{"key": "value"}' --output json
+metrics-monkey --url https://api.example.com/data --method POST --requests 500 --concurrency 20 --timeout 5 --headers '{"Authorization": "Bearer my-token"}' --body '{"key": "value"}' 
 ```
 **Description:** Sends 500 POST requests to https://api.example.com/data, including a custom Authorization header and a JSON body. The tool will use a concurrency of 20, a timeout of 5 seconds per request
 
