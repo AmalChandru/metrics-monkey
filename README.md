@@ -1,6 +1,6 @@
 # metrics-monkey 🐒🚀
 
-metrics-monkey is a no-nonsense, high-performance CLI HTTP benchmarking tool that's a Swiss Army knife for developers and performance engineers who want to:
+The `metrics-monkey` is a no-nonsense, high-performance CLI HTTP benchmarking tool that's a swiss army knife for developers and performance engineers who want to:
 
 - 📈 **Supercharge Web Performance:** Benchmark your web services to spot performance bottlenecks and optimize your application for top-notch speed and reliability.
 - 🔄 **Test API Endpoints:** Simulate various traffic patterns, including high concurrency, large number of requests, and prolonged durations, to ensure your API endpoints can handle the load.
