@@ -4,6 +4,10 @@ import * as yargs from 'yargs';
 
 // Parse command-line arguments using yargs
 const argv = yargs
+   .usage('Usage: $0 [options]')
+  .command('help', 'Provides information about available commands and their usage', () => {}, () => {
+    yargs.showHelp();
+  })
   .option('url', { type: 'string', demandOption: true, describe: 'The URL to benchmark' })
   .option('method', { type: 'string', default: 'GET', describe: 'HTTP method' })
   .option('headers', { type: 'string', default: '{}', describe: 'HTTP headers in JSON format' })
@@ -15,6 +19,10 @@ const argv = yargs
   .option('output', { type: 'string', default: 'plain', choices: ['plain', 'json'], describe: 'Output format' })
   .argv as yargs.Arguments;
 
+if (!argv._.length || argv._.includes('help')) {
+  yargs.showHelp();
+  process.exit(0);
+}
 const options: BenchmarkOptions = {
   url: argv.url as string,
   method: (argv.method as string).toUpperCase() as 'GET' | 'POST' | 'PUT' | 'DELETE',
@@ -26,6 +34,7 @@ const options: BenchmarkOptions = {
   duration: argv.duration as number,
   output: argv.output as 'plain' | 'json',
 };
+
 
 // Create an instance of Benchmark and run it
 const benchmark = new Benchmark(options);
