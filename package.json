@@ -1,11 +1,15 @@
 {
   "name": "metrics-monkey",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The metrics-monkey 🐒🚀 is a high-performance CLI tool for easy and effective HTTP benchmarking",
   "main": "dist/cli/index.js",
+  "bin": {
+    "metrics-monkey": "./dist/cli/index.js"
+  },
   "scripts": {
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "prepublishOnly": "npm run build"
   },
   "keywords": ["cli", "benchmarking", "load-testing", "performance-testing", "http", "typescript"],
   "author": "Amal Chandru",

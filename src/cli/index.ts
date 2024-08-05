@@ -1,13 +1,12 @@
+#!/usr/bin/env node
+
 import { Benchmark } from '../core/benchmark';
 import { BenchmarkOptions } from '../types';
 import * as yargs from 'yargs';
 
 // Parse command-line arguments using yargs
 const argv = yargs
-  .usage('Usage: $0 [options]')
-  .command('help', 'Provides information about available commands and their usage', () => {}, () => {
-    yargs.showHelp();
-  })
+  .usage('Usage: metrics-monkey [options]')
   .option('url', { type: 'string', demandOption: true, describe: 'The URL to benchmark' })
   .option('method', { type: 'string', default: 'GET', describe: 'HTTP method' })
   .option('headers', { type: 'string', default: '{}', describe: 'HTTP headers in JSON format' })
@@ -17,12 +16,8 @@ const argv = yargs
   .option('timeout', { type: 'number', default: 10, describe: 'Request timeout in seconds' })
   .option('duration', { type: 'number', default: 0, describe: 'Benchmark duration in milliseconds' })
   .option('output', { type: 'string', default: 'plain', choices: ['plain', 'json'], describe: 'Output format' })
+  .help()
   .argv as yargs.Arguments;
-
-if (!argv._.length || argv._.includes('help')) {
-  yargs.showHelp();
-  process.exit(0);
-}
 
 const options: BenchmarkOptions = {
   url: argv.url as string,
