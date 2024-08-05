@@ -4,7 +4,7 @@ import * as yargs from 'yargs';
 
 // Parse command-line arguments using yargs
 const argv = yargs
-   .usage('Usage: $0 [options]')
+  .usage('Usage: $0 [options]')
   .command('help', 'Provides information about available commands and their usage', () => {}, () => {
     yargs.showHelp();
   })
@@ -23,6 +23,7 @@ if (!argv._.length || argv._.includes('help')) {
   yargs.showHelp();
   process.exit(0);
 }
+
 const options: BenchmarkOptions = {
   url: argv.url as string,
   method: (argv.method as string).toUpperCase() as 'GET' | 'POST' | 'PUT' | 'DELETE',
@@ -34,7 +35,6 @@ const options: BenchmarkOptions = {
   duration: argv.duration as number,
   output: argv.output as 'plain' | 'json',
 };
-
 
 // Create an instance of Benchmark and run it
 const benchmark = new Benchmark(options);

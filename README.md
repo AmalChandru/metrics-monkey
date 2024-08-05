@@ -26,6 +26,7 @@ metrics-monkey --url <url> --method <method> --requests <requests> --concurrency
 ```
 
 **Options:**
+- `--help:` Display the help message with all available options and their descriptions.
 - `--url:` The URL to benchmark.
 - `--method:` The HTTP method to use (GET, POST, PUT, DELETE).
 - `--requests:` The total number of requests to make.
